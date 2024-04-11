@@ -7,7 +7,7 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Reinstalling a MacOS Sierra Mac - No bag entry | Montvid&#39;s code snippets</title>
 <meta name="keywords" content="">
-<meta name="description" content="Some MacOS Sierra Mac&rsquo;s don&rsquo;t let you reinstall (Option-Shift-Command-R default MacOS version or Option-Command-R new version) MacOS. I got these handy instructions from Mr. Macinitosh. In Terminal do:
+<meta name="description" content="Some MacOS Sierra Mac&rsquo;s don&rsquo;t let you reinstall (Option-Shift-Command-R default MacOS version or Option-Command-R new version) MacOS. I got these handy instructions from Mr. Macintosh. In Terminal do:
 Check date &amp; time to make sure it is correct
 date If not correct make sure you are connected to wifi or ethernet and run this command
 ntpdate -u time.apple.com Change directory to Macintosh HD
@@ -117,7 +117,7 @@ cd /Volumes/Macintosh\ HD Download the macOS Sierra 10.">
 
 </div>
   </header> 
-  <div class="post-content"><p>Some MacOS Sierra Mac&rsquo;s don&rsquo;t let you reinstall (Option-Shift-Command-R default MacOS version or Option-Command-R new version) MacOS. I got these handy instructions from Mr. Macinitosh.
+  <div class="post-content"><p>Some MacOS Sierra Mac&rsquo;s don&rsquo;t let you reinstall (Option-Shift-Command-R default MacOS version or Option-Command-R new version) MacOS. I got these handy instructions from <a href="https://www.youtube.com/@Mr.Macintosh">Mr. Macintosh</a>.
 In Terminal do:</p>
 <ul>
 <li>Check date &amp; time to make sure it is correct<br>
@@ -146,15 +146,13 @@ In Terminal do:</p>
 <p>Even though Apple reissued the Sierra installer to fix the Certificate issue in 2019 it has another problem.
 The Info.plist CFBundleShortVersionString has an incorrect entry of 12.6.06 it needs to be 12.6.03</p>
 <ul>
-<li>To fix it we can run this command to edit the new entry in. (Credit MacRumors forum user: EricFromCanada)</li>
+<li>To fix it we can run this command to edit the new entry in. (Credit MacRumors forum user: EricFromCanada)<br>
+<code>plutil -replace CFBundleShortVersionString -string &quot;12.6.03&quot; /Volumes/Macintosh\ HD/Applications/Install\ macOS\ Sierra.app/Contents/Info.plist</code></li>
+<li>Now we can create the macOS Sierra USB Installer!<br>
+<code>/Volumes/Macintosh\ HD/Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Volumes/Macintosh\ HD/Applications/Install\ macOS\ Sierra.app</code></li>
 </ul>
-<p><code>plutil -replace CFBundleShortVersionString -string &quot;12.6.03&quot; /Volumes/Macintosh\ HD/Applications/Install\ macOS\ Sierra.app/Contents/Info.plist</code></p>
-<ul>
-<li>Now we can create the macOS Sierra USB Installer!</li>
-</ul>
-<p><code>/Volumes/Macintosh\ HD/Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Volumes/Macintosh\ HD/Applications/Install\ macOS\ Sierra.app</code></p>
 <p>I hope these instructions helped you get your Mac back up and running.
-Mr. Macinitosh.</p>
+Mr. Macintosh</p>
 
 
   </div>

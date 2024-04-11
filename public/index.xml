@@ -13,7 +13,7 @@
       <link>http://localhost:1313/posts/reinstallmac/</link>
       <pubDate>Thu, 11 Apr 2024 11:58:15 +0300</pubDate>
       <guid>http://localhost:1313/posts/reinstallmac/</guid>
-      <description>Some MacOS Sierra Mac&amp;rsquo;s don&amp;rsquo;t let you reinstall (Option-Shift-Command-R default MacOS version or Option-Command-R new version) MacOS. I got these handy instructions from Mr. Macinitosh. In Terminal do:
+      <description>Some MacOS Sierra Mac&amp;rsquo;s don&amp;rsquo;t let you reinstall (Option-Shift-Command-R default MacOS version or Option-Command-R new version) MacOS. I got these handy instructions from Mr. Macintosh. In Terminal do:
 Check date &amp;amp; time to make sure it is correct
 date If not correct make sure you are connected to wifi or ethernet and run this command
 ntpdate -u time.apple.com Change directory to Macintosh HD

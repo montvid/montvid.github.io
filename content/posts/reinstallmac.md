@@ -3,7 +3,7 @@ title = 'Reinstalling a MacOS Sierra Mac - No bag entry'
 date = 2024-04-11T11:58:15+03:00
 draft = false
 +++
-Some MacOS Sierra Mac's don't let you reinstall (Option-Shift-Command-R default MacOS version or Option-Command-R new version) MacOS. I got these handy instructions from Mr. Macinitosh.
+Some MacOS Sierra Mac's don't let you reinstall (Option-Shift-Command-R default MacOS version or Option-Command-R new version) MacOS. I got these handy instructions from [Mr. Macintosh](https://www.youtube.com/@Mr.Macintosh).
 In Terminal do:
 
  - Check date & time to make sure it is correct  
@@ -32,13 +32,10 @@ In a few seconds the Sierra installer will start BEHIND the terminal window. If 
 
 Even though Apple reissued the Sierra installer to fix the Certificate issue in 2019 it has another problem.
 The Info.plist CFBundleShortVersionString has an incorrect entry of 12.6.06 it needs to be 12.6.03
- - To fix it we can run this command to edit the new entry in. (Credit MacRumors forum user: EricFromCanada)
-
+ - To fix it we can run this command to edit the new entry in. (Credit MacRumors forum user: EricFromCanada)  
 `plutil -replace CFBundleShortVersionString -string "12.6.03" /Volumes/Macintosh\ HD/Applications/Install\ macOS\ Sierra.app/Contents/Info.plist`
-
- - Now we can create the macOS Sierra USB Installer!
-
+ - Now we can create the macOS Sierra USB Installer!  
 `/Volumes/Macintosh\ HD/Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Volumes/Macintosh\ HD/Applications/Install\ macOS\ Sierra.app`
 
 I hope these instructions helped you get your Mac back up and running.
-Mr. Macinitosh.
+Mr. Macintosh
