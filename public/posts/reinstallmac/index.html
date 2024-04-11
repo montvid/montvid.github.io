@@ -5,10 +5,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Reinstalling a Mac - No bag entry | Montvid&#39;s code snippets</title>
+<title>Reinstalling a MacOS Sierra Mac - No bag entry | Montvid&#39;s code snippets</title>
 <meta name="keywords" content="">
-<meta name="description" content="Some Mac&rsquo;s don&rsquo;t let you reinstall (Option-Shift-Command-R default MacOS version or Option-Command-R new version) MacOS because they can&rsquo;t update their internal time - error No bag entry. To change the date (month/day/time/year) in Terminal do:
-date 041111582024 ">
+<meta name="description" content="Some MacOS Sierra Mac&rsquo;s don&rsquo;t let you reinstall (Option-Shift-Command-R default MacOS version or Option-Command-R new version) MacOS. I got these handy instructions from Mr. Macinitosh. In Terminal do:
+Check date &amp; time to make sure it is correct
+date If not correct make sure you are connected to wifi or ethernet and run this command
+ntpdate -u time.apple.com Change directory to Macintosh HD
+cd /Volumes/Macintosh\ HD Download the macOS Sierra 10.">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/posts/reinstallmac/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
@@ -108,16 +111,50 @@ date 041111582024 ">
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      Reinstalling a Mac - No bag entry
+      Reinstalling a MacOS Sierra Mac - No bag entry
     </h1>
     <div class="post-meta"><span title='2024-04-11 11:58:15 +0300 EEST'>April 11, 2024</span>
 
 </div>
   </header> 
-  <div class="post-content"><p>Some Mac&rsquo;s don&rsquo;t let you reinstall (Option-Shift-Command-R default MacOS version or Option-Command-R new version) MacOS because they can&rsquo;t update their internal time - error <strong>No bag entry</strong>. To change the date (month/day/time/year) in Terminal do:</p>
+  <div class="post-content"><p>Some MacOS Sierra Mac&rsquo;s don&rsquo;t let you reinstall (Option-Shift-Command-R default MacOS version or Option-Command-R new version) MacOS. I got these handy instructions from Mr. Macinitosh.
+In Terminal do:</p>
 <ul>
-<li><code>date 041111582024</code></li>
+<li>Check date &amp; time to make sure it is correct<br>
+<code>date</code></li>
+<li>If not correct make sure you are connected to wifi or ethernet and run this command<br>
+<code>ntpdate -u time.apple.com</code></li>
+<li>Change directory to Macintosh HD<br>
+<code>cd /Volumes/Macintosh\ HD</code></li>
+<li>Download the macOS Sierra 10.12.6 InstallOS.dmg from Apple.com using curl. Note this is a 4.7GB file and might take a while or fail. If it fails run it again.<br>
+<code>curl http://updates-http.cdn-apple.com/2019/cert/061-39476-20191023-48f365f4-0015-4c41-9f44-39d3d2aca067/InstallOS.dmg -o InstallOS.dmg</code></li>
+<li>We need to mount the InstallOS.dmg<br>
+<code>hdiutil attach InstallOS.dmg</code></li>
+<li>Now we need to install the &ldquo;Install macOS Sierra.app&rdquo; from the InstallOS.dmg to Macintosh HD volume<br>
+<code>installer -pkg /Volumes/Install\ macOS/InstallOS.pkg  -target /Volumes/Macintosh\ HD</code></li>
+<li>The Install macOS Sierra.app is now in the /Volumes/Macintosh\ HD/Applications folder. We can now start the Sierra installer!<br>
+<code>/Volumes/Macintosh\ HD/Applications/Install\ macOS\ Sierra.app/Contents/MacOS/Installassistant_springboard</code></li>
 </ul>
+<p>In a few seconds the Sierra installer will start BEHIND the terminal window. If you don&rsquo;t see it make the terminal window but DON&rsquo;T close it as it will stop the installer. Now step through the installer you are good to go now!</p>
+<p><strong>Optional Create macOS Sierra USB installer while we are here. Take a picture of these instructions with your phone as we need to close terminal.</strong></p>
+<ul>
+<li>Plug in your USB Drive and make sure to backup all data as we are going to ERASE the dive in disk utility</li>
+<li>When erasing the USB drive, make sure you click &ldquo;view&rdquo; and click &ldquo;Show all devices&rdquo;</li>
+<li>Make sure to use Format the USB Drive with macOS Extended Journaled and GUID Partition map. Leave Untitled as the default drive name</li>
+<li>Go back to terminal</li>
+</ul>
+<p>Even though Apple reissued the Sierra installer to fix the Certificate issue in 2019 it has another problem.
+The Info.plist CFBundleShortVersionString has an incorrect entry of 12.6.06 it needs to be 12.6.03</p>
+<ul>
+<li>To fix it we can run this command to edit the new entry in. (Credit MacRumors forum user: EricFromCanada)</li>
+</ul>
+<p><code>plutil -replace CFBundleShortVersionString -string &quot;12.6.03&quot; /Volumes/Macintosh\ HD/Applications/Install\ macOS\ Sierra.app/Contents/Info.plist</code></p>
+<ul>
+<li>Now we can create the macOS Sierra USB Installer!</li>
+</ul>
+<p><code>/Volumes/Macintosh\ HD/Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Volumes/Macintosh\ HD/Applications/Install\ macOS\ Sierra.app</code></p>
+<p>I hope these instructions helped you get your Mac back up and running.
+Mr. Macinitosh.</p>
 
 
   </div>
