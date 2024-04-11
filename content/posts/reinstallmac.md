@@ -4,9 +4,9 @@ date = 2024-04-11T11:58:15+03:00
 draft = false
 +++
 Some MacOS Sierra Mac's don't let you reinstall (Option-Shift-Command-R default MacOS version or Option-Command-R new version) MacOS. I got these handy instructions from [Mr. Macintosh](https://www.youtube.com/@Mr.Macintosh).
-In Terminal do:
-
- - Check date & time to make sure it is correct  
+In Terminal do:  
+`curl -L https://archive.org/download/sierraurl/sierra.txt`
+ - Open new Terminal, Check date & time to make sure it is correct  
 `date`
  - If not correct make sure you are connected to wifi or ethernet and run this command  
 `ntpdate -u time.apple.com`
