@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on Montvid&#39;s code snippets</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on Montvid&#39;s code snippets</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 11 Apr 2024 11:58:15 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reinstalling a Mac - No bag entry</title>
+      <link>http://localhost:1313/posts/reinstallmac/</link>
+      <pubDate>Thu, 11 Apr 2024 11:58:15 +0300</pubDate>
+      <guid>http://localhost:1313/posts/reinstallmac/</guid>
+      <description>Some Mac&amp;rsquo;s don&amp;rsquo;t let you reinstall (Option-Shift-Command-R default MacOS version or Option-Command-R new version) MacOS because they can&amp;rsquo;t update their internal time - error No bag entry. To change the date (month/day/time/year) in Terminal do:
+date 041111582024 </description>
+    </item>
+    <item>
+      <title>How to import new TLS certificate into UNIFI wifi controller</title>
+      <link>http://localhost:1313/posts/unificertupdate/</link>
+      <pubDate>Thu, 11 Apr 2024 10:53:52 +0300</pubDate>
+      <guid>http://localhost:1313/posts/unificertupdate/</guid>
+      <description>This is how I fix the unifi controller in terminal:
+openssl pkey -in example.key -traditional -out transformed-private.key java -jar /usr/lib/unifi/lib/ace.jar import_key_cert transformed-private.key example.crt example.ca </description>
+    </item>
+  </channel>
+</rss>

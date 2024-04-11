@@ -1,0 +1,4 @@
+baseURL: https://montvid.github.io/
+languageCode: en-us
+title: Montvid's code snippets
+theme: ["PaperMod"]
