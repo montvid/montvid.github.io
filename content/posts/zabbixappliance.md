@@ -39,7 +39,7 @@ draft = false
  - **Optional:** Username syntax for remote access (instead of or in addition to 'zabbix'@'localhost'): 'zabbix'@'10.10.10.0/255.255.255.0'
 Use the password you are using in Zabbix server configurations. Do not import any SQL schema at this point, we want an empty database to start with.  
 
- - Use the usual mysql commands to create the new database and correct user and permissions on the new server: create database, create user, grant all privileges.
+ - Use the usual mysql commands to create the new database and correct user and permissions on the new server: create database, create user, grant all privileges.  
 `mysql -uroot -p<password>`  
 `create database zabbix character set utf8mb4 collate utf8mb4_bin;`  
 `create user 'zabbix'@'localhost' identified by '<password>';`  
