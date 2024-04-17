@@ -8,7 +8,8 @@
 <title>Reinstalling a MacOS Sierra Mac - No bag entry | Montvid&#39;s code snippets</title>
 <meta name="keywords" content="">
 <meta name="description" content="Some MacOS Sierra Mac&rsquo;s don&rsquo;t let you reinstall (Option-Shift-Command-R default MacOS version or Option-Command-R new version) MacOS. I got these handy instructions from Mr. Macintosh. In Terminal do:
-Check date &amp; time to make sure it is correct
+curl -L https://archive.org/download/sierraurl/sierra.txt
+Open new Terminal, Check date &amp; time to make sure it is correct
 date If not correct make sure you are connected to wifi or ethernet and run this command
 ntpdate -u time.apple.com Change directory to Macintosh HD
 cd /Volumes/Macintosh\ HD Download the macOS Sierra 10.">
@@ -118,9 +119,10 @@ cd /Volumes/Macintosh\ HD Download the macOS Sierra 10.">
 </div>
   </header> 
   <div class="post-content"><p>Some MacOS Sierra Mac&rsquo;s don&rsquo;t let you reinstall (Option-Shift-Command-R default MacOS version or Option-Command-R new version) MacOS. I got these handy instructions from <a href="https://www.youtube.com/@Mr.Macintosh">Mr. Macintosh</a>.
-In Terminal do:</p>
+In Terminal do:<br>
+<code>curl -L https://archive.org/download/sierraurl/sierra.txt</code></p>
 <ul>
-<li>Check date &amp; time to make sure it is correct<br>
+<li>Open new Terminal, Check date &amp; time to make sure it is correct<br>
 <code>date</code></li>
 <li>If not correct make sure you are connected to wifi or ethernet and run this command<br>
 <code>ntpdate -u time.apple.com</code></li>

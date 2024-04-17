@@ -6,15 +6,29 @@
     <description>Recent content on Montvid&#39;s code snippets</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Apr 2024 11:58:15 +0300</lastBuildDate>
+    <lastBuildDate>Tue, 16 Apr 2024 15:45:01 +0300</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zabbix appliance configuration</title>
+      <link>http://localhost:1313/posts/zabbixappliance/</link>
+      <pubDate>Tue, 16 Apr 2024 15:45:01 +0300</pubDate>
+      <guid>http://localhost:1313/posts/zabbixappliance/</guid>
+      <description>Migrating to Zabbix appliance should be less maintenance but there are enough things to do.
+Change time zone
+cp /usr/share/zoneinfo/Europe/Vilnius /etc/localtime Install &amp;amp; enable VM guest agent
+yum install qemu-guest-agent
+systemctl enable qemu-guest-agent Migrating an existing database one usually needs to change zabbix cache size to something bigger
+vi /etc/zabbix/zabbix_server.conf
+CacheSize=1G As I am migrating a database I need more space in the appliance so this was helpful by Elier Herrera Shutdown the VM, increase the disk size, boot up the VM, ssh into it.</description>
+    </item>
     <item>
       <title>Reinstalling a MacOS Sierra Mac - No bag entry</title>
       <link>http://localhost:1313/posts/reinstallmac/</link>
       <pubDate>Thu, 11 Apr 2024 11:58:15 +0300</pubDate>
       <guid>http://localhost:1313/posts/reinstallmac/</guid>
       <description>Some MacOS Sierra Mac&amp;rsquo;s don&amp;rsquo;t let you reinstall (Option-Shift-Command-R default MacOS version or Option-Command-R new version) MacOS. I got these handy instructions from Mr. Macintosh. In Terminal do:
-Check date &amp;amp; time to make sure it is correct
+curl -L https://archive.org/download/sierraurl/sierra.txt
+Open new Terminal, Check date &amp;amp; time to make sure it is correct
 date If not correct make sure you are connected to wifi or ethernet and run this command
 ntpdate -u time.apple.com Change directory to Macintosh HD
 cd /Volumes/Macintosh\ HD Download the macOS Sierra 10.</description>
