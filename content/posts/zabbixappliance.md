@@ -1,7 +1,7 @@
 +++
 title = 'Zabbix appliance configuration'
 date = 2024-04-16T15:45:01+03:00
-draft = true
+draft = false
 +++
 **Migrating to Zabbix appliance should be less maintenance but there are some things to set up.**  
  - Change time zone  
