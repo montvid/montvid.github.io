@@ -40,17 +40,22 @@ draft = false
 Use the password you are using in Zabbix server configurations. Do not import any SQL schema at this point, we want an empty database to start with.  
 
  - Use the usual mysql commands to create the new database and correct user and permissions on the new server: create database, create user, grant all privileges.  
-`mysql -uroot -p<password>`  
+`mysql -uroot -p`  
 `create database zabbix character set utf8mb4 collate utf8mb4_bin;`  
-`create user 'zabbix'@'localhost' identified by '<password>';`  
+`create user 'zabbix'@'localhost' identified by '';`  
 `grant all privileges on zabbix.* to 'zabbix'@'localhost';`  
-`SET GLOBAL log_bin_trust_function_creators = 1;`  
+`SET GLOBAL log_bin_trust_function_creators = 1;`
+ - In MySQL 8.0 and newer, more granular privileges like SYSTEM_USER are introduced:
+`GRANT SUPER ON *.* TO 'zabbix'@'localhost';`
+`GRANT SET_USER_ID ON *.* TO 'zabbix'@'localhost';`
+`GRANT SYSTEM_USER ON *.* TO 'zabbix'@'localhost';`
 `quit;`
  - Import the DB and wait a long time to finish  
 `cd /var/lib/mysql`  
 `zcat zbx-dump.sql.gz | mysql -u zabbix -p zabbix`
+`systemctl restart zabbix-server`
  - Finish the DB configuration  
-`mysql -uroot -p<password>`  
+`mysql -uroot -p`  
 `SET GLOBAL log_bin_trust_function_creators = 0;`  
 `quit;`  
 **Optional:**
