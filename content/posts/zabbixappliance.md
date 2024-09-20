@@ -45,14 +45,14 @@ Use the password you are using in Zabbix server configurations. Do not import an
 `create user 'zabbix'@'localhost' identified by '';`  
 `grant all privileges on zabbix.* to 'zabbix'@'localhost';`  
 `SET GLOBAL log_bin_trust_function_creators = 1;`
- - In MySQL 8.0 and newer, more granular privileges like SYSTEM_USER are introduced:
-`GRANT SUPER ON *.* TO 'zabbix'@'localhost';`
-`GRANT SET_USER_ID ON *.* TO 'zabbix'@'localhost';`
-`GRANT SYSTEM_USER ON *.* TO 'zabbix'@'localhost';`
+ - In MySQL 8.0 and newer, more granular privileges like SYSTEM_USER are introduced:  
+`GRANT SUPER ON *.* TO 'zabbix'@'localhost';`  
+`GRANT SET_USER_ID ON *.* TO 'zabbix'@'localhost';`  
+`GRANT SYSTEM_USER ON *.* TO 'zabbix'@'localhost';`  
 `quit;`
  - Import the DB and wait a long time to finish  
 `cd /var/lib/mysql`  
-`zcat zbx-dump.sql.gz | mysql -u zabbix -p zabbix`
+`zcat zbx-dump.sql.gz | mysql -u zabbix -p zabbix`  
 `systemctl restart zabbix-server`
  - Finish the DB configuration  
 `mysql -uroot -p`  
