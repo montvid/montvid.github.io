@@ -41,6 +41,7 @@ Use the password you are using in Zabbix server configurations. Do not import an
 
  - Use the usual mysql commands to create the new database and correct user and permissions on the new server: create database, create user, grant all privileges.  
 `mysql -uroot -p`  
+`drop database zabbix;`  
 `create database zabbix character set utf8mb4 collate utf8mb4_bin;`  
 `create user 'zabbix'@'localhost' identified by '';`  
 `grant all privileges on zabbix.* to 'zabbix'@'localhost';`  
@@ -49,6 +50,8 @@ Use the password you are using in Zabbix server configurations. Do not import an
 `GRANT SUPER ON *.* TO 'zabbix'@'localhost';`  
 `GRANT SET_USER_ID ON *.* TO 'zabbix'@'localhost';`  
 `GRANT SYSTEM_USER ON *.* TO 'zabbix'@'localhost';`  
+`GRANT TRIGGER ON zabbix.* TO 'zabbix_srv'@'localhost';`  
+`FLUSH PRIVILEGES;`  
 `quit;`
  - Import the DB and wait a long time to finish  
 `cd /var/lib/mysql`  
